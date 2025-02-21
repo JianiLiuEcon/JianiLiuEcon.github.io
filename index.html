@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jiani Liu</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #222;
+      line-height: 1.6;
+      display: flex;
+    }
+    nav {
+      width: 200px;
+      background-color: #004D73;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .main-content {
+      margin-left: 220px;
+      padding: 40px;
+      width: calc(100% - 220px);
+    }
+    .container {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+    h1 {
+      color: #003366;
+    }
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border: 3px solid #003366;
+    }
+    .bullet::before {
+    content: "•";
+    color: #000;
+    margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#jiani-liu" style="font-size: 28px;">Jiani Liu</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#cv">CV</a>
+  </nav>
+  <div class="main-content">
+    <div class="container" id="jiani-liu" style="display: flex; align-items: center;">
+      <img src="JianiLiu.jpeg" class="profile-pic" style="width: 280px; height: auto; margin-right: 40px;">
+      <div class="info" style="max-width: 600px;">
+        <h1>Jiani Liu</h1>
+        <p>Welcome! I'm a Ph.D. student in Economics at The Ohio State University.</p>
+        <p><strong>Research Interest:</strong></p>
+        <p>Macroeconomics and International Economics</p>
+        <p><strong>Contact:</strong></p>
+        <p>Email: <a href="mailto:liu.10336@osu.edu">liu.10336@osu.edu</a></p>
+      </div>
+    </div>
+    <div class="container" id="research">
+      <h1>Research</h1>
+        <h2>Work in Progress</h2>
+        <ul>
+          <li><strong>Entrepreneurial Dynamics and the Great Recession</strong></li>
+          <p> There is significant inequality among self-employed, but why is there a lack of switching? Self-employed income is more sensitive to shocks, so why are entry and exit rates so smooth over time? How, and in what ways, do unemployment insurance (UI) policies affect entrepreneurship? I study occupational choices over time and the economic effects of redistributive policies, focusing on smooth entry rates.</p>
+          <li><strong>Maturity and Consumer Default Risks</strong></li>
+          <p>I study the implications of unsecured debt maturity in a general equilibrium model wherein households face idiosyncratic endowment shocks. In the model economy, households can default on their debts. I find that as maturities lengthen, the number of borrowers grows. The increase in borrowers coincides with an amplified overall default rate and indicates a decrease in savers, culminating in a decline in total savings. While people increasingly engage in borrowing activities, individual households are borrowing less. The comovements of borrowings and savings manifest in equilibrium, where the risk-free rate experiences a slight decrement as maturity extends. I also analyze welfare effects and observe that households prefer long-term debt over short-term debt, contrasting with the findings of partial equilibrium models. The small risk-free rate movements can account for this difference.</p>
+        </ul> 
+    </div>
+    <div class="container" id="teaching">
+      <h1>Teaching</h1>
+        <h2>Teaching Assistant</h2>
+        <ul>
+          <li>Macroeconomic Theory 1A (Ph.D., ECON 8721)</li>
+          <li>Money and Banking (ECON 4200)</li>
+          <li>Intermediate Macroeconomic Theory (ECON 4002)</li>
+          <li>Principles of Macroeconomics (ECON 2002.01)</li>
+        </ul>
+    </div>
+    <div class="container" id="cv">
+      <h1>CV</h1>
+      <p><a href="Jiani_Liu_CV.pdf" target="_blank">Download my CV (PDF)</a></p>
+    </div>
+  </div>
+</body>
+</html>
