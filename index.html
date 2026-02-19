@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jiani Liu</title>
+
   <style>
     body {
       font-family: 'Georgia', serif;
@@ -15,27 +16,37 @@
       display: flex;
       font-size: 18px;
     }
+
     nav {
-      position: static;
-      width: 100%;
-      height: auto;
-      flex-direction: row;
-      justify-content: space-around;
+      width: 200px;
+      background-color: #004D73;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       font-size: 20px;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .main-content {
       margin-left: 220px;
       padding: 40px;
       width: calc(100% - 220px);
     }
+
     .container {
       padding: 40px;
       max-width: 980px;
@@ -43,9 +54,11 @@
       background-color: white;
       margin-bottom: 10px;
     }
+
     h1 {
       color: #003366;
     }
+
     .profile-pic {
       width: 200px;
       height: 200px;
@@ -53,22 +66,63 @@
       border-radius: 5px;
       margin-bottom: 20px;
     }
+
     .bullet::before {
       content: "•";
       color: #000;
       margin-right: 8px;
     }
+
     a {
       color: #004D73;
     }
+
     a:hover {
       color: #003366;
     }
+
     li strong {
       font-size: 1.2em;
     }
+
+    /* -----------------------------
+       MOBILE FIXES (important)
+       ----------------------------- */
+    @media (max-width: 768px) {
+      body {
+        display: block;
+        font-size: 16px;
+      }
+
+      /* hide sidebar on phones */
+      nav {
+        display: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 16px;
+      }
+
+      .container {
+        padding: 16px;
+      }
+
+      /* stack the top intro section */
+      .mobile-stack {
+        display: block !important;
+      }
+
+      .profile-pic {
+        width: 220px !important;
+        height: auto !important;
+        margin: 0 0 16px 0 !important;
+      }
+    }
   </style>
 </head>
+
 <body>
   <nav>
     <a href="#jiani-liu" style="font-size: 28px;">Jiani Liu</a>
@@ -76,11 +130,17 @@
     <a href="#teaching">Teaching</a>
     <a href="#cv">CV</a>
   </nav>
+
   <div class="main-content">
     <div class="container" id="jiani-liu">
-      <h1 style="margin-top: 0; margin-bottom: 30px; text-align: center; font-size: 40px;">Jiani Liu</h1>
-      <div style="display: flex; align-items: center;">
-        <img src="JianiLiu.jpeg" class="profile-pic" style="width: 300px; height: auto; margin-right: 40px;">
+      <h1 style="margin-top: 0; margin-bottom: 30px; text-align: center; font-size: 40px;">
+        Jiani Liu
+      </h1>
+
+      <!-- Desktop: flex row. Mobile: stacked via .mobile-stack -->
+      <div class="mobile-stack" style="display: flex; align-items: center;">
+        <img src="JianiLiu.jpeg" class="profile-pic" style="width: 300px; height: auto; margin-right: 40px;" alt="Jiani Liu" />
+
         <div class="info" style="max-width: 800px;">
           <p>Welcome! I'm a Ph.D. Candidate in Economics at The Ohio State University.</p>
           <p><strong>Research Interest:</strong></p>
@@ -94,21 +154,47 @@
     <div class="container" id="research">
       <h1>Research</h1>
       <h2>Work in Progress</h2>
+
+      <!-- FIXED HTML STRUCTURE: p tags are inside li -->
       <ul>
-        <li><strong>Self-employment Dynamics and the Great Recession</strong></li>
-        <p>This paper studies how, given the stability of self-employment entry rates, shifts in the composition of entrants, specifically the increased share entering from unemployment rather than wage work during recessions, shape recessions and recoveries. This perspective differs with the existing literature, which emphasizes cyclical patterns in self-employment and often portrays self-employment as a driver of economic recovery. Further, I study improved designs of unemployment insurance when self-employment is an occupational option. I build an occupational choice model with labor market frictions that endogenously determines self-employment, aligns with empirical facts, and provides insights into business cycle dynamics, while examining the design of unemployment insurance. I find that labor market frictions make self-employment more attractive to unemployed households.</p>
-        
-        <li><strong>Maturity and Consumer Default Risks</strong></li>
-        <p>I study the implications of unsecured debt maturity in a general equilibrium model in which households face idiosyncratic endowment shocks. In the model economy, households can default on their debts. I find that as maturities lengthen, the number of borrowers increases. This rise in borrowers coincides with a higher overall default rate and a decline in the number of savers, leading to a reduction in total savings. Although more people engage in borrowing, individual households borrow less. The comovement of borrowing and saving emerges in equilibrium, where the risk-free rate experiences a slight decline as maturity extends. I also analyze welfare effects and find that households prefer long-term debt over short-term debt, resolving the puzzle posed by partial equilibrium models of debt maturity. The decrease in the risk-free rate can account for this preference.</p>
-      </ul> 
+        <li>
+          <strong>Self-employment Dynamics and the Great Recession</strong>
+          <p>
+            This paper studies how, given the stability of self-employment entry rates, shifts in the composition of
+            entrants, specifically the increased share entering from unemployment rather than wage work during recessions,
+            shape recessions and recoveries. This perspective differs with the existing literature, which emphasizes cyclical
+            patterns in self-employment and often portrays self-employment as a driver of economic recovery. Further, I study
+            improved designs of unemployment insurance when self-employment is an occupational option. I build an occupational
+            choice model with labor market frictions that endogenously determines self-employment, aligns with empirical facts,
+            and provides insights into business cycle dynamics, while examining the design of unemployment insurance. I find
+            that labor market frictions make self-employment more attractive to unemployed households.
+          </p>
+        </li>
+
+        <li>
+          <strong>Maturity and Consumer Default Risks</strong>
+          <p>
+            I study the implications of unsecured debt maturity in a general equilibrium model in which households face
+            idiosyncratic endowment shocks. In the model economy, households can default on their debts. I find that as
+            maturities lengthen, the number of borrowers increases. This rise in borrowers coincides with a higher overall
+            default rate and a decline in the number of savers, leading to a reduction in total savings. Although more people
+            engage in borrowing, individual households borrow less. The comovement of borrowing and saving emerges in
+            equilibrium, where the risk-free rate experiences a slight decline as maturity extends. I also analyze welfare
+            effects and find that households prefer long-term debt over short-term debt, resolving the puzzle posed by partial
+            equilibrium models of debt maturity. The decrease in the risk-free rate can account for this preference.
+          </p>
+        </li>
+      </ul>
     </div>
 
     <div class="container" id="teaching">
       <h1>Teaching</h1>
+
       <h2>Independent Instructor</h2>
       <ul>
         <li>Intermediate Macroeconomic Theory (ECON 4002)</li>
       </ul>
+
       <h2>Teaching Assistant</h2>
       <ul>
         <li>Macroeconomic Theory IA (ECON 8721)</li>
@@ -120,7 +206,7 @@
 
     <div class="container" id="cv">
       <h1>CV</h1>
-      <p><a href="Jiani_Liu_CV.pdf" target="_blank">Download my CV (PDF)</a></p>
+      <p><a href="Jiani_Liu_CV.pdf" target="_blank" rel="noopener">Download my CV (PDF)</a></p>
     </div>
   </div>
 </body>
