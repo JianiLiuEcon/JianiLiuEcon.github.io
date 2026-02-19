@@ -6,6 +6,11 @@
   <title>Jiani Liu</title>
 
   <style>
+    /* KEY FIX: prevents padding from causing overflow */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Georgia', serif;
       margin: 0;
@@ -13,12 +18,11 @@
       background-color: white;
       color: #222;
       line-height: 1.6;
-      display: flex;
       font-size: 18px;
     }
 
     nav {
-      width: 200px;
+      width: 220px;                 /* make this match the content offset */
       background-color: #004D73;
       padding: 20px;
       height: 100vh;
@@ -41,22 +45,24 @@
       text-decoration: underline;
     }
 
+    /* Instead of calc(100% - 220px), just offset with margin-left.
+       This avoids the common overflow bug on laptops/browsers. */
     .main-content {
       margin-left: 220px;
       padding: 40px;
-      width: calc(100% - 220px);
     }
 
     .container {
-      padding: 40px;
+      width: 100%;
       max-width: 980px;
-      margin: auto;
+      margin: 0 auto 10px auto;
+      padding: 40px;
       background-color: white;
-      margin-bottom: 10px;
     }
 
     h1 {
       color: #003366;
+      margin-top: 0;
     }
 
     .profile-pic {
@@ -65,12 +71,6 @@
       object-fit: cover;
       border-radius: 5px;
       margin-bottom: 20px;
-    }
-
-    .bullet::before {
-      content: "•";
-      color: #000;
-      margin-right: 8px;
     }
 
     a {
@@ -85,23 +85,29 @@
       font-size: 1.2em;
     }
 
+    /* A little nicer spacing for research items */
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 18px;
+    }
+
+    li p {
+      margin: 10px 0 0 0;
+    }
+
     /* -----------------------------
-       MOBILE FIXES (important)
+       MOBILE FIXES
        ----------------------------- */
     @media (max-width: 768px) {
-      body {
-        display: block;
-        font-size: 16px;
-      }
-
-      /* hide sidebar on phones */
       nav {
         display: none;
       }
 
       .main-content {
         margin-left: 0;
-        width: 100%;
         padding: 16px;
       }
 
@@ -133,20 +139,17 @@
 
   <div class="main-content">
     <div class="container" id="jiani-liu">
-      <h1 style="margin-top: 0; margin-bottom: 30px; text-align: center; font-size: 40px;">
-        Jiani Liu
-      </h1>
+      <h1 style="margin-bottom: 30px; text-align: center; font-size: 40px;">Jiani Liu</h1>
 
-      <!-- Desktop: flex row. Mobile: stacked via .mobile-stack -->
-      <div class="mobile-stack" style="display: flex; align-items: center;">
-        <img src="JianiLiu.jpeg" class="profile-pic" style="width: 300px; height: auto; margin-right: 40px;" alt="Jiani Liu" />
+      <div class="mobile-stack" style="display: flex; align-items: center; gap: 40px;">
+        <img src="JianiLiu.jpeg" class="profile-pic" style="width: 300px; height: auto;" alt="Jiani Liu" />
 
         <div class="info" style="max-width: 800px;">
           <p>Welcome! I'm a Ph.D. Candidate in Economics at The Ohio State University.</p>
-          <p><strong>Research Interest:</strong></p>
-          <p>Macro, Labor, and International Economics</p>
-          <p><strong>Contact:</strong></p>
-          <p>Email: <a href="mailto:liu.10336@osu.edu">liu.10336@osu.edu</a></p>
+          <p><strong>Research Interest:</strong><br>Macro, Labor, and International Economics</p>
+          <p><strong>Contact:</strong><br>
+            Email: <a href="mailto:liu.10336@osu.edu">liu.10336@osu.edu</a>
+          </p>
         </div>
       </div>
     </div>
@@ -155,7 +158,6 @@
       <h1>Research</h1>
       <h2>Work in Progress</h2>
 
-      <!-- FIXED HTML STRUCTURE: p tags are inside li -->
       <ul>
         <li>
           <strong>Self-employment Dynamics and the Great Recession</strong>
@@ -163,51 +165,4 @@
             This paper studies how, given the stability of self-employment entry rates, shifts in the composition of
             entrants, specifically the increased share entering from unemployment rather than wage work during recessions,
             shape recessions and recoveries. This perspective differs with the existing literature, which emphasizes cyclical
-            patterns in self-employment and often portrays self-employment as a driver of economic recovery. Further, I study
-            improved designs of unemployment insurance when self-employment is an occupational option. I build an occupational
-            choice model with labor market frictions that endogenously determines self-employment, aligns with empirical facts,
-            and provides insights into business cycle dynamics, while examining the design of unemployment insurance. I find
-            that labor market frictions make self-employment more attractive to unemployed households.
-          </p>
-        </li>
-
-        <li>
-          <strong>Maturity and Consumer Default Risks</strong>
-          <p>
-            I study the implications of unsecured debt maturity in a general equilibrium model in which households face
-            idiosyncratic endowment shocks. In the model economy, households can default on their debts. I find that as
-            maturities lengthen, the number of borrowers increases. This rise in borrowers coincides with a higher overall
-            default rate and a decline in the number of savers, leading to a reduction in total savings. Although more people
-            engage in borrowing, individual households borrow less. The comovement of borrowing and saving emerges in
-            equilibrium, where the risk-free rate experiences a slight decline as maturity extends. I also analyze welfare
-            effects and find that households prefer long-term debt over short-term debt, resolving the puzzle posed by partial
-            equilibrium models of debt maturity. The decrease in the risk-free rate can account for this preference.
-          </p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="container" id="teaching">
-      <h1>Teaching</h1>
-
-      <h2>Independent Instructor</h2>
-      <ul>
-        <li>Intermediate Macroeconomic Theory (ECON 4002)</li>
-      </ul>
-
-      <h2>Teaching Assistant</h2>
-      <ul>
-        <li>Macroeconomic Theory IA (ECON 8721)</li>
-        <li>Money and Banking (ECON 4200)</li>
-        <li>Intermediate Macroeconomic Theory (ECON 4002)</li>
-        <li>Principles of Macroeconomics (ECON 2002)</li>
-      </ul>
-    </div>
-
-    <div class="container" id="cv">
-      <h1>CV</h1>
-      <p><a href="Jiani_Liu_CV.pdf" target="_blank" rel="noopener">Download my CV (PDF)</a></p>
-    </div>
-  </div>
-</body>
-</html>
+            patterns in self-employment and often portrays self-employment as a driver of economic re
